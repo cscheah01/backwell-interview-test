@@ -1,0 +1,220 @@
+.navigateApp {
+  background-color: #2d47b8;
+  padding: 10rem 1rem 6rem;
+  color: white;
+  text-align: center;
+  position: relative;
+  overflow: visible;
+
+  @media (max-width: 992px) {
+    padding: 6rem 1rem 4rem;
+  }
+}
+
+.title {
+  color: #00eaff;
+  font-size: 2.2rem;
+  font-weight: 700;
+  margin-bottom: 3rem;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* --- Tabs --- */
+.tabWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+  margin-bottom: 3rem;
+}
+
+.tab {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.8rem 1.5rem;
+  border-radius: 50px;
+  border: 1px solid rgba(0, 234, 255, 0.3);
+  background: rgba(38, 70, 196, 0.5);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: 600;
+  font-size: 1rem;
+  color: white;
+
+  &:hover {
+    transform: translateY(-3px);
+    border-color: #00eaff;
+  }
+
+  img {
+    width: 32px;
+    height: 32px;
+  }
+}
+
+.active {
+  background: linear-gradient(90deg, #f5a623, #ffcc33);
+  color: #0a1c4f;
+  border-color: #f5c542;
+  box-shadow: 0 0 25px rgba(245, 165, 35, 0.7);
+}
+
+/* --- Content --- */
+.contentArea {
+  position: relative;
+  width: 100%;
+  min-height: 400px; /* keeps height stable */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden; /* ✅ prevents small shakes when switching */
+}
+
+.tabContent {
+  width: 100%;
+  max-width: 1100px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  background: rgba(38, 70, 196, 0.5);
+  border: 1px solid rgba(0, 234, 255, 0.3);
+  border-radius: 20px;
+  padding: 3rem;
+  gap: 3rem;
+
+  position: absolute;
+  top: 0;
+  // left: 50%;
+  transform: translateX(-50%);
+  transition: opacity 0.4s ease, transform 0.4s ease;
+  will-change: opacity, transform; /* ✅ smooth GPU-accelerated transitions */
+}
+
+.textContent {
+  flex: 1;
+
+  h3 {
+    color: #f5c542;
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+  }
+
+  p {
+    color: white;
+    line-height: 1.6;
+    font-size: 1rem;
+    opacity: 0.95;
+  }
+}
+
+.imageWrapper {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.tabImage {
+  width: 100%;
+  max-width: 350px;
+  height: auto;
+  border-radius: 10px;
+}
+
+/* --- App Store Buttons --- */
+.appButtons {
+  display: flex;
+  gap: 0.5rem;
+  margin: 0rem auto 5rem;
+  align-items: center;
+
+  img {
+    display: block;
+    object-fit: contain;
+  }
+  img[alt="Google Play"] {
+    height: 70px;
+    width: auto;
+  }
+  img[alt="App Store"] {
+    height: 48px;
+    width: auto;
+  }
+}
+
+/* --- Responsive --- */
+@media (max-width: 992px) {
+  .contentArea {
+    min-height: 550px; /* ✅ prevents jumpy height calculation */
+    height: auto;
+    overflow: visible;
+  }
+
+  .tabContent {
+    position: relative;
+    top: unset;
+    left: unset;
+    transform: none;
+    flex-direction: column;
+    padding: 2rem;
+    text-align: center;
+    width: 100%;
+    transition: none; /* ✅ removes transform lag */
+  }
+
+  .textContent h3 {
+    font-size: 1.3rem;
+  }
+
+  .tabImage {
+    max-width: 280px;
+  }
+
+  .appButtons {
+    align-items: center;
+    gap: 0.4rem;
+    margin-top: 2rem;
+    margin-left: 1.8rem;
+  }
+
+  .title {
+    color: #00eaff;
+    font-size: 1.6rem;
+    font-weight: 700;
+    margin-bottom: 3rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .tabWrapper {
+    gap: 1rem;
+  }
+
+  .tab {
+    font-size: 0.9rem;
+    padding: 0.6rem 1rem;
+
+    img {
+      width: 28px;
+      height: 28px;
+    }
+  }
+
+  .tabContent {
+    padding: 1.5rem;
+  }
+
+  .textContent p {
+    font-size: 0.9rem;
+  }
+}

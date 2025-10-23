@@ -1,0 +1,247 @@
+.tradeLikePro {
+  background: url("/trade-bg.png") no-repeat center top;
+  background-size: cover;
+  background-color: #2d47b8;
+  background-attachment: scroll; /* ensures smooth behavior on mobile */
+  background-position: center -40px;
+  padding: 10rem 1rem 16rem;
+  color: white;
+  position: relative;
+//   overflow: visible;
+
+  @media (max-width: 992px) {
+    background-position: center top;
+    background-size: contain; /* prevent cutting off */
+    background-repeat: no-repeat;
+    padding: 7rem 1rem 4rem;
+  }
+
+  @media (max-width: 600px) {
+    background-size: 180%;
+    background-position: center -20px;
+    padding: 6rem 1rem 3rem;
+  }
+}
+
+.title {
+  color: #00eaff;
+  font-size: 2.2rem;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 2.5rem;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  top: 230px;
+
+  @media (max-width: 992px) {
+    position:inherit;
+    top: auto;
+  }
+
+  @media (max-width: 600px) {
+    position:inherit;
+    top: auto;
+  }
+}
+
+/* --- Content Layout --- */
+.contentWrapper {
+  display: flex;
+  justify-content:center;
+  align-items: flex-start;
+  gap: 0rem;
+  width: 100%;
+  margin-top: 2rem;
+}
+
+.steps {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  max-width: 500px;
+}
+
+.stepHeader {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    justify-content: flex-start;
+    margin-bottom: 0.75rem;
+  }
+
+.step {
+  background: rgba(38, 70, 196, 0.8);
+  border: 1px solid rgba(0, 234, 255, 0.3);
+  border-radius: 12px;
+  padding: 1.5rem 1.5rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+
+  display: flex;
+  align-items: center;
+  gap: 1rem; /* space between number and text */
+}
+
+.stepNumber {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #f5c542;
+  font-style: italic;
+  flex-shrink: 0;
+}
+
+.step p {
+  color: #fff;
+  font-weight: 500;
+  font-size: 1.2rem;
+  margin: 0;
+  line-height: 1.4;
+}
+
+
+.active {
+  border-color: #00eaff;
+  box-shadow: 0 0 25px rgba(0, 234, 255, 0.8);
+  background: rgba(0, 40, 160, 0.9);
+}
+
+.stepImageWrapper {
+  display: none; /* hidden in desktop */
+}
+
+/* --- Right-Side Image for Desktop --- */
+.imageDisplay {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 450px; /* ✅ prevents page jump by fixing image area height */
+  position: relative;
+}
+
+.imageTransition {
+  position: absolute; /* ✅ keeps image swapping smooth in same spot */
+  top: 0;
+  left: 35%;
+  transform: translateX(-50%);
+  filter: drop-shadow(0 0 20px rgba(0, 234, 255, 0.6));
+}
+
+
+.mainImage {
+  border-radius: 16px;
+  width: 370px;
+  height: auto;
+}
+
+/* --- App Buttons --- */
+.appButtons {
+  display: flex;
+    gap: 1rem;
+    margin: 2rem 0 5rem;
+    align-items: center;
+
+  img { display: block; object-fit: contain; }
+    img[alt="Google Play"] { height: 70px; width: auto; }
+    img[alt="App Store"]  { height: 48px; width: auto; }
+}
+
+/* --- Responsive --- */
+@media (max-width: 992px) {
+  .contentWrapper {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .imageDisplay {
+    display: none;
+  }
+
+  .steps {
+    width: 100%;
+    align-items: center;
+  }
+
+  .step {
+    width: 90%;
+    max-width: 420px;
+    display: flex;
+    flex-direction: column; /* keep normal order, image below text */
+    align-items: center;
+    text-align: center;
+    padding: 1.2rem;
+    position: relative;
+  }
+
+  .stepHeader {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    justify-content: flex-start;
+    margin-bottom: 0.75rem;
+  }
+
+  /* Step number + text in one line */
+  .stepNumber {
+    display: inline-block;
+    font-size: 1.4rem;
+    margin-right: 0.5rem;
+    color: #f5c542;
+    font-style: italic;
+  }
+
+  .step p {
+    display: inline-block;
+    font-weight: 500;
+    font-size: 1rem;
+    color: #fff;
+  }
+
+  /* Image under the text */
+  .stepImageWrapper {
+    display: block;
+    margin-top: 1rem;
+  }
+
+  .stepImageWrapper img {
+    width: 180px;
+    height: auto;
+    border-radius: 12px;
+    filter: drop-shadow(0 0 10px rgba(0, 234, 255, 0.5));
+  }
+
+  .appButtons {
+    // flex-direction: column;
+    align-items: center;
+    gap: 0.4rem;
+    margin-top: 2rem;
+  }
+}
+
+
+@media (max-width: 600px) {
+  .title {
+    font-size: 1.8rem;
+  }
+
+  .step {
+    padding: 1rem;
+  }
+
+  .stepNumber {
+    font-size: 1.3rem;
+  }
+
+  .stepImageWrapper img {
+    width: 160px;
+  }
+}

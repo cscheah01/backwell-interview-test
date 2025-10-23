@@ -1,0 +1,161 @@
+.whyChooseUs {
+  position: relative;
+  background: url("/trade-bg.png") no-repeat center top;
+  background-size: cover;
+  background-color: #2d47b8;
+  background-attachment: scroll; /* smooth on mobile */
+  background-position: center -40px;
+  padding: 10rem 1rem 6rem;
+  color: #fff;
+  text-align: center;
+//   overflow: visible;
+
+  @media (max-width: 992px) {
+    background-position: center top;
+    background-size: contain;
+    padding: 7rem 1rem 4rem;
+  }
+
+  @media (max-width: 600px) {
+    background-size: 180%;
+    background-position: center -20px;
+    padding: 6rem 1rem 3rem;
+  }
+}
+
+.waveBg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: auto;
+  z-index: 1;
+  pointer-events: none;
+
+  img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    opacity: 0.9;
+  }
+}
+
+.title {
+  color: #00eaff;
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 3rem;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto 15rem;
+  position: relative;
+  top: 180px;
+  z-index: 2;
+}
+
+.cardsWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.card {
+  display: grid;
+  grid-template-columns: 120px 200px 1fr;
+  align-items: center;
+  background: #fff;
+  border-radius: 14px;
+  padding: 1.5rem 2rem;
+  color: #000;
+  text-align: left;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 0 20px rgba(0, 234, 255, 0.5);
+}
+
+.icon {
+  width: 85px;
+  height: auto;
+}
+
+.titleCol h4 {
+  color: #233cd1;
+  font-weight: 700;
+  font-size: 1.1rem;
+  margin: 0;
+}
+
+.descCol p {
+  color: #000;
+  font-size: 1.125rem;
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* --- Button --- */
+.registerBtn {
+  background: #f58a07;
+  border: none;
+  border-radius: 8px;
+  color: white;
+  font-size: 1rem;
+  font-weight: 600;
+  padding: 0.8rem 2rem;
+  margin-top: 3rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  position: relative;
+  top: 40px;
+}
+
+.registerBtn:hover {
+  background: #ffa733;
+}
+
+/* --- Responsive --- */
+@media (max-width: 992px) {
+  .card {
+    grid-template-columns: 60px 160px 1fr;
+    padding: 1rem 1.2rem;
+  }
+
+  .titleCol h4 {
+    font-size: 1rem;
+  }
+
+  .descCol p {
+    font-size: 0.9rem;
+  }
+
+  .registerBtn {
+    top: 100px;
+  }
+}
+
+@media (max-width: 700px) {
+  .card {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto;
+    text-align: center;
+  }
+
+  .icon {
+    margin: 0 auto 0.8rem;
+  }
+
+  .titleCol h4 {
+    text-align: center;
+    margin-bottom: 0.5rem;
+  }
+
+  .descCol p {
+    text-align: center;
+  }
+}

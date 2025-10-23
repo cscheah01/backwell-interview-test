@@ -1,0 +1,279 @@
+.hero {
+  background-color: #2d47b8;
+  color: #fff;
+  padding: 4rem 0;
+  position: relative;
+  overflow: hidden;
+}
+
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+
+  display: grid;
+  grid-template-columns: 0.95fr 1.05fr; 
+  grid-template-areas:
+    "image top"
+    "image bottom";
+  column-gap: 3rem;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.topGroup { grid-area: top; }
+.imageWrapper { grid-area: image; }
+.bottomGroup { grid-area: bottom; }
+
+
+.imageWrapper {
+  grid-area: image;
+  display: flex;
+  justify-content: flex-start; /* push image toward center */
+  position: relative;
+  left: -150px; /* move it 50px toward center */
+  z-index: 0;
+
+  .heroImage {
+    max-width: 115%;
+    height: auto;
+    display: block;
+  }
+}
+
+.topGroup {
+  max-width: 520px;
+
+  h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    line-height: 1.2;
+
+    span {
+      font-weight: 400;
+      font-style: italic;
+    }
+  }
+
+  .appButtons {
+    display: flex;
+    gap: 1rem;
+    margin: 0.75rem 0 0.75rem;
+    align-items: center;
+
+    a { display: flex; align-items: center; }
+
+    img { display: block; object-fit: contain; }
+    img[alt="Google Play"] { height: 70px; width: auto; }
+    img[alt="App Store"]  { height: 48px; width: auto; }
+  }
+
+  .regulated {
+    position: absolute;
+    right: 60px;
+    top: 30px;
+    width: 160px;
+    height: auto;
+    opacity: 0.6;
+    pointer-events: none;
+    z-index: 1;
+  }
+
+}
+
+.bottomGroup {
+  max-width: 520px;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+
+  h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #01f2f2;
+
+    span {
+      color: #f6b93b;
+      font-style: italic;
+    }
+  }
+
+  p {
+    font-size: 0.95rem;
+    line-height: 1.5;
+    opacity: 0.9;
+    margin-top: -30px;
+    margin-bottom: 60px;
+  }
+
+  .tags {
+  display: flex;
+  // justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  position: relative;
+  bottom: 40px;
+  // margin-top: 1.5rem;
+
+  span {
+    color: #fff;
+    font-weight: 600;
+    padding: 0.4rem 1.2rem;
+    border-radius: 10px;
+    font-size: 0.95rem;
+    letter-spacing: 0.3px;
+    background: transparent;
+    position: relative;
+    cursor: default;
+    transition: all 0.3s ease;
+  }
+
+  // Add colorful gradient borders for each tag
+  span:nth-child(1) {
+    border: 2px solid transparent;
+    background: linear-gradient(#2d47b8, #2d47b8) padding-box,
+      linear-gradient(90deg, #00eaff, #00eaff) border-box;
+  }
+
+  span:nth-child(2) {
+    border: 2px solid transparent;
+    background: linear-gradient(#2d47b8, #2d47b8) padding-box,
+      linear-gradient(90deg, #f5c542, #f58a07) border-box;
+  }
+
+  span:nth-child(3) {
+    border: 2px solid transparent;
+    background: linear-gradient(#2d47b8, #2d47b8) padding-box,
+      linear-gradient(90deg, #ff4b4b, #ff8888) border-box;
+  }
+
+  span:nth-child(4) {
+    border: 2px solid transparent;
+    background: linear-gradient(#2d47b8, #2d47b8) padding-box,
+      linear-gradient(90deg, #00eaff, #007bff) border-box;
+  }
+
+  // Optional hover glow
+  span:hover {
+    box-shadow: 0 0 15px rgba(0, 234, 255, 0.5);
+    transform: translateY(-2px);
+  }
+}
+
+
+  .registerBtn {
+    background-color: #f37406;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    padding: 0.75rem 1.5rem;
+    font-weight: 700;
+    text-align: center;
+    text-decoration: none;
+    transition: transform 0.2s ease;
+    
+
+    &:hover { transform: translateY(-2px); }
+  }
+
+  .disclaimer {
+    font-size: 0.8rem;
+    opacity: 0.8;
+    margin-top: 10px;
+  }
+}
+
+
+@media (max-width: 992px) {
+  .container {
+    column-gap: 2rem;
+  }
+
+  .topGroup h1 { font-size: 2.1rem; }
+  .bottomGroup h2 { font-size: 1.25rem; }
+}
+
+
+@media (max-width: 768px) {
+  .hero { padding: 3rem 1rem; }
+
+  .container {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "top"     
+      "image"   
+      "bottom"; 
+    row-gap: 1.5rem;
+    text-align: center;
+    align-items:center;
+    justify-items: center;
+  }
+
+  .topGroup {
+    width: 100%;
+    max-width: 400px;
+    position: relative;
+
+    h1 {
+      font-size: 1.8rem;
+      line-height: 1.3;
+      margin: 0 0 0.75rem;
+    }
+
+    .appButtons {
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      margin: 0.25rem 0 0;
+    }
+
+   
+    .regulated {
+      position: absolute;
+      right: 10px;
+      top: 48px;
+      width: 110px;
+      height: auto;
+      opacity: 0.35;
+      margin: 0;
+      pointer-events: none;
+    }
+  }
+
+  .imageWrapper {
+    .heroImage { max-width: 500px; }
+  }
+
+  .bottomGroup {
+    width: 100%;
+    max-width: 400px;
+    text-align: right;
+    align-items: end;
+    margin-left: 20px;
+    margin-right: 20px;
+
+    h2 { margin-top: 0.25rem; font-size: 1.675rem; }
+
+    p {
+      font-size: 0.975rem;
+      line-height: 1.45;
+      max-width: 90%;
+    }
+
+    .tags { justify-content: end; margin: 0 0rem 0 2rem; }
+
+    .registerBtn {
+      margin-top: 0.5rem;
+      font-size: 0.9rem;
+      padding: 0.65rem 1.25rem;
+    }
+  }
+}
+
+
+@media (min-width: 1200px) {
+  .container { column-gap: 4rem; }
+}

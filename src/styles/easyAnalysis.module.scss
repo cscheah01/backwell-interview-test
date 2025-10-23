@@ -1,0 +1,188 @@
+.easyAnalysis {
+  background-color: #2d47b8;
+  padding: 6rem 1rem;
+  text-align: center;
+  color: white;
+  position: relative;
+  overflow: hidden;
+}
+
+.title {
+  color: #00eaff;
+  font-size: 2.2rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.subtitle {
+  color: #f5c542;
+  font-size: 1.1rem;
+  font-weight: 600;
+  max-width: 800px;
+  margin: 0 auto 3rem;
+  line-height: 1.5;
+}
+
+.imageGroup {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.centerImage {
+  z-index: 3;
+  position: relative;
+  width: 270px;
+}
+
+/* Floating cards */
+/* Floating cards */
+.card {
+  position: absolute;
+  z-index: 2;
+  filter: drop-shadow(0 0 15px rgba(0, 234, 255, 0.65));
+  border-radius: 10px;
+  animation: float 5s ease-in-out infinite;
+  transition: transform 0.4s ease;
+}
+
+/* Adjusted for better symmetry & closeness to the main phone */
+.card1 {
+  top: 6%;
+  right: 51%;
+  transform: translate(200px, -20px);
+}
+
+.card2 {
+  top: 18%;
+  left: 52%;
+  transform: translate(-200px, -30px);
+}
+
+.card3 {
+  top: 43%;
+  right: 50%;
+  transform: translate(190px, -20px);
+}
+
+.card4 {
+  bottom: 22%;
+  left: 52%;
+  transform: translate(-190px, 20px);
+}
+
+.card5 {
+  bottom: 8%;
+  right: 50%;
+  transform: translate(200px, 40px);
+}
+
+.card1,
+.card2,
+.card3,
+.card4,
+.card5 {
+  z-index: 4;
+  opacity: 0.95;
+}
+
+/* Floating animation */
+@keyframes float {
+  0% {
+    transform: translateY(0) scale(1);
+  }
+  50% {
+    transform: translateY(-8px) scale(1.03);
+  }
+  100% {
+    transform: translateY(0) scale(1);
+  }
+}
+
+
+/* Responsive */
+@media (max-width: 768px) {
+  .easyAnalysis {
+    padding: 4rem 1rem 5rem;
+  }
+
+  .title {
+    font-size: 1.8rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .subtitle {
+    font-size: 1rem;
+    margin-bottom: 2.5rem;
+    max-width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.5;
+  }
+
+  .imageGroup {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+  }
+
+  .centerImage {
+    width: 290px;
+    z-index: 3;
+    position: relative;
+  }
+
+  .card {
+    position: absolute;
+    animation: none;
+    filter: drop-shadow(0 0 10px rgba(0, 234, 255, 0.5));
+    opacity: 0.95;
+    transform: none;
+  }
+
+  /* Refined card placement for visual balance */
+  .card1 {
+    top: 5%;
+    left: 0%;
+    transform: translate(-90%, -30%);
+    z-index: 5;
+  }
+
+  .card2 {
+    top: 15%;
+    left: 50%;
+    transform: translate(10%, -10%);
+    z-index: 5;
+  }
+
+  .card3 {
+    bottom: 26%;
+    left: 0%;
+    transform: translate(-90%, 10%);
+    z-index: 4;
+  }
+
+  .card4 {
+    bottom: 25%;
+    left: 50%;
+    transform: translate(10%, 20%);
+    z-index: 4;
+  }
+
+  .card5 {
+    bottom: 10%;
+    left: 0%;
+    transform: translate(-50%, 0%);
+    z-index: 3;
+  }
+
+  .card img {
+    width: 200px !important;
+    height: auto !important;
+    border-radius: 12px;
+  }
+}
+
+

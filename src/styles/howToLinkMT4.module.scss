@@ -1,0 +1,139 @@
+.howToLink {
+  background: #2d47b8;
+  padding: 4rem 1rem;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.title {
+  color: #00eaff;
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 3rem;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.swiper {
+  overflow: visible !important;
+  padding-bottom: 2rem;
+}
+
+.slide {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card {
+  background: transparent;
+  border: 1px solid rgba(255, 165, 0, 0.6);
+  border-radius: 20px;
+  box-shadow: 0 0 20px rgba(255, 165, 0, 0.4);
+  padding: 1.5rem 1rem;
+  text-align: center;
+  transition: all 0.3s ease;
+  height: 430px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 0 30px rgba(255, 165, 0, 0.7);
+}
+
+.image {
+  border: none;
+  box-shadow: none;
+  border-radius: 12px;
+  margin-bottom: 1.2rem;
+}
+
+.card p {
+  color: white;
+  font-weight: 600;
+  font-size: 1.05rem;
+  line-height: 1.4;
+  max-width: 260px;
+  margin: 0 auto;
+}
+
+.arrowWrapper {
+  position: absolute;
+  right: -73px;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 2;
+}
+
+.arrow {
+  width: 75px;
+  height: auto;
+  filter: drop-shadow(0 0 8px rgba(255, 200, 0, 0.8));
+}
+
+/* --- Button --- */
+.registerBtn {
+  background: #f58a07;
+  border: none;
+  border-radius: 8px;
+  color: white;
+  font-size: 1rem;
+  font-weight: 600;
+  padding: 0.8rem 2rem;
+  margin-top: 3rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  position: relative;
+  top: 20px;
+}
+
+.registerBtn:hover {
+  background: #ffa733;
+}
+
+/* --- Responsive --- */
+@media (max-width: 992px) {
+  .swiper {
+    padding: 0 1rem;
+  }
+  .arrowWrapper {
+    display: none;
+  }
+  .card {
+    height: 420px;
+  }
+}
+
+@media (max-width: 600px) {
+  .title {
+    font-size: 1.6rem;
+  }
+
+  .card {
+    height: auto;
+    padding: 1rem;
+  }
+
+  .card p {
+    font-size: 0.9rem;
+  }
+
+  .howToLink {
+    background: #2d47b8;
+    padding: 0rem 1rem 6rem;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+}

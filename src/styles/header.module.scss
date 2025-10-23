@@ -1,0 +1,597 @@
+// header.module.scss
+.header {
+  background-color: #102a4d;
+  color: white;
+  padding: 1rem 0;
+  position: sticky;
+  top: 0;
+  z-index: 50;
+}
+
+.container {
+  max-width: 80rem;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  z-index: 10;
+}
+
+// Logo Section
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  cursor: pointer;
+}
+
+.logoIcon {
+  width: 40px;
+  height: 40px;
+  color: white;
+  
+  svg {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.logoText {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.1;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+.logoPrimary {
+  font-size: 1.125rem;
+}
+
+.logoSecondary {
+  font-size: 0.875rem;
+  opacity: 0.9;
+}
+
+// Promotion Section
+.promotion {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.promotionLabel {
+  display: flex;
+  flex-direction: column;
+  font-size: 0.70rem;
+  font-weight: 300;
+  letter-spacing: 1px;
+  text-align: center;
+  line-height: 1.3;
+  opacity: 0.9;
+}
+
+// Timer
+.timer {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.timeUnit {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 60px;
+}
+
+.timeValue {
+  font-size: 2.2rem;
+  font-weight: 300;
+  line-height: 1;
+  letter-spacing: -1px;
+}
+
+.timeLabel {
+  font-size: 0.75rem;
+  margin-top: 0.25rem;
+  opacity: 0.8;
+  text-transform: capitalize;
+}
+
+.separator {
+  font-size: 2rem;
+  font-weight: 300;
+  opacity: 0.5;
+  margin: 0 -0.5rem;
+  padding-bottom: 1rem;
+}
+
+// Actions
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.registerBtn,
+.loginBtn,
+.logoutBtn {
+  background: #F37406;
+  transition: all 0.3s ease;
+  padding: 0.75rem 1rem;
+  color: #ffffff;
+  text-decoration: none;
+  border: none;
+  border-radius: 9999px;
+  font-weight: 700;
+  font-size: 0.875rem;
+  letter-spacing: 0.5px;
+  
+  &:hover {
+    background: #F37406;
+    transform: translateY(-2px);
+  }
+  
+  &:active {
+    transform: translateY(0);
+  }
+}
+
+.userBtn {
+  background-color: #102a4d;
+  transition: background-color 0.3s ease;
+  color: #3c3c3c;
+  width: 60px;
+  height: 60px;
+  border:none;
+  // border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+/* Notice Bar */
+.noticeBar {
+  background-color: #0077e5;
+  color: #fff;
+  text-align: center;
+  font-size: 0.875rem;
+  padding: 0.4rem 1rem;
+  position: relative;
+
+  a {
+    color: #fff;
+    font-weight: 600;
+    margin-left: 0.25rem;
+    text-decoration: underline;
+  }
+}
+
+.closeBtn {
+  position: absolute;
+  right: 1rem;
+  top: 0.2rem;
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 1.25rem;
+  cursor: pointer;
+}
+
+/* Notice Bar */
+.noticeBar {
+  background-color: #0077e5;
+  color: #fff;
+  text-align: center;
+  font-size: 0.875rem;
+  padding: 0.5rem 2rem;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  a {
+    color: #fff;
+    font-weight: 600;
+    text-decoration: underline;
+    margin-left: 0.25rem;
+  }
+}
+
+.closeBtn {
+  position: absolute;
+  right: 1rem;
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 1.25rem;
+  cursor: pointer;
+}
+
+/* Hamburger Icon */
+.menuToggle {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 28px;
+  height: 20px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+
+  span {
+    display: block;
+    height: 2.5px;
+    width: 100%;
+    background-color: #fff;
+    border-radius: 2px;
+    transition: all 0.3s ease;
+  }
+
+  &.open span:nth-child(1) {
+    transform: translateY(8.5px) rotate(45deg);
+  }
+
+  &.open span:nth-child(2) {
+    opacity: 0;
+  }
+
+  &.open span:nth-child(3) {
+    transform: translateY(-8.5px) rotate(-45deg);
+  }
+}
+
+/* Mobile Menu */
+.mobileMenu {
+  display: flex;
+  flex-direction: column;
+  background-color: #0c2540;
+  text-align: center;
+  padding: 1rem 0;
+
+  a {
+    color: #fff;
+    text-decoration: none;
+    padding: 0.75rem 0;
+    font-size: 1rem;
+    font-weight: 500;
+    transition: opacity 0.3s ease;
+
+    &:hover {
+      opacity: 0.7;
+    }
+  }
+}
+
+.logoutModal {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  z-index: 2000;
+  pointer-events: none;
+}
+
+.logoutBox {
+  background: rgba(15, 50, 140, 0.9);
+  color: #fff;
+  border: 1px solid rgba(0, 234, 255, 0.4);
+  border-radius: 12px;
+  padding: 1rem 2rem;
+  margin-bottom: 3rem;
+  text-align: center;
+  box-shadow: 0 0 20px rgba(0, 234, 255, 0.3);
+  pointer-events: auto;
+
+  h3 {
+    color: #00eaff;
+    font-size: 1.3rem;
+    font-weight: 800;
+    margin-bottom: 0.4rem;
+  }
+
+  p {
+    font-size: 0.95rem;
+    opacity: 0.9;
+  }
+}
+
+
+
+/* For mobile view */
+@media (max-width: 992px) {
+  /* Hide desktop buttons */
+  .actions {
+    .registerBtn,
+    .loginBtn,
+    .logoutBtn {
+      display: none !important;
+    }
+  }
+
+  /* Mobile menu container */
+  .mobileMenu {
+    background: rgba(10, 30, 120, 0.95);
+    border-top: 1px solid rgba(0, 234, 255, 0.25);
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    padding: 1.5rem 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    z-index: 999;
+
+    a {
+      color: #fff;
+      font-weight: 600;
+      text-decoration: none;
+      font-size: 1.05rem;
+      transition: color 0.3s ease;
+
+      &:hover {
+        color: #00eaff;
+      }
+    }
+
+    /* The buttons container inside the menu */
+    .mobileButtons {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.75rem;
+      margin-top: 1rem;
+
+      .registerBtn,
+      .loginBtn,
+      .logoutBtn {
+        background: #f58a07;
+        color: #fff;
+        border: none;
+        border-radius: 9999px;
+        padding: 0.8rem 2rem;
+        font-weight: 800;
+        font-size: 1rem;
+        text-align: center;
+        width: 200px;
+        cursor: pointer;
+        transition: all 0.25s ease;
+
+        &:hover {
+          background: #ffa733;
+          box-shadow: 0 0 20px rgba(255, 180, 60, 0.45);
+        }
+      }
+    }
+  }
+}
+
+
+/* Mobile Responsive Rules */
+@media (max-width: 768px) {
+  .promotion {
+    display: none;
+  }
+
+  .registerBtn,
+  .userBtn {
+    display: none;
+  }
+
+  .menuToggle {
+    display: flex;
+  }
+}
+
+
+// Responsive Design
+@media (max-width: 1024px) {
+  .container {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .promotion {
+    gap: 1rem;
+  }
+  
+  .timer {
+    gap: 0.5rem;
+  }
+  
+  .timeValue {
+    font-size: 2rem;
+  }
+  
+  .timeUnit {
+    min-width: 50px;
+  }
+  
+  .registerBtn {
+    padding: 0.625rem 1.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .header {
+    padding: 0.75rem 0;
+  }
+
+  .container {
+    flex-direction: row; 
+    justify-content: space-between; 
+    align-items: center;
+    gap: 0;
+  }
+  
+  .logo {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .logoIcon {
+    width: 36px;
+    height: 36px;
+  }
+  
+  .promotion {
+    width: 100%;
+    flex-direction: column;
+    gap: 0.75rem;
+    align-items: center;
+  }
+  
+  .promotionLabel {
+    text-align: center;
+    font-size: 0.625rem;
+  }
+
+  .timer {
+    gap: 0.75rem;
+  }
+  
+  .timeValue {
+    font-size: 1.75rem;
+  }
+  
+  .timeUnit {
+    min-width: 45px;
+  }
+
+  .timeLabel {
+    font-size: 0.625rem;
+  }
+  
+  .separator {
+    font-size: 1.5rem;
+    margin: 0 -0.25rem;
+    padding-bottom: 0.75rem;
+  }
+
+  .actions {
+    width: 100%;
+    justify-content: center;
+    gap: 0.75rem;
+  }
+
+  .registerBtn {
+    flex: 1;
+    max-width: 200px;
+  }
+
+  .userBtn {
+    width: 40px;
+    height: 40px;
+  }
+
+  .promotion {
+    display: none;
+  }
+
+  .registerBtn,
+  .userBtn {
+    display: none;
+  }
+
+  .menuToggle {
+    display: flex;
+    margin-left: auto;
+  }
+}
+
+@media (max-width: 480px) {
+  .header {
+    padding: 0.5rem 0;
+
+    &::after {
+      height: 20px;
+    }
+  }
+
+  .container {
+    gap: 0.75rem;
+  }
+
+  .logo {
+    gap: 0.5rem;
+  }
+
+  .logoIcon {
+    width: 32px;
+    height: 32px;
+  }
+
+  .logoText {
+    font-size: 0.875rem;
+  }
+
+  .logoPrimary {
+    font-size: 1rem;
+  }
+
+  .logoSecondary {
+    font-size: 0.75rem;
+  }
+
+  .promotion {
+    gap: 0.5rem;
+  }
+
+  .promotionLabel {
+    font-size: 0.563rem;
+    line-height: 1.2;
+  }
+
+  .timer {
+    gap: 0.5rem;
+  }
+  
+  .timeValue {
+    font-size: 1.5rem;
+  }
+
+  .timeUnit {
+    min-width: 40px;
+  }
+  
+  .timeLabel {
+    font-size: 0.563rem;
+    margin-top: 0.125rem;
+  }
+  
+  .separator {
+    font-size: 1.25rem;
+    margin: 0 -0.125rem;
+    padding-bottom: 0.5rem;
+  }
+
+  .actions {
+    gap: 0.5rem;
+  }
+
+  .registerBtn {
+    padding: 0.5rem 1.25rem;
+    font-size: 0.75rem;
+    max-width: 160px;
+  }
+  
+  .userBtn {
+    width: 36px;
+    height: 36px;
+
+    img {
+      width: 18px !important;
+      height: 18px !important;
+    }
+  }
+}

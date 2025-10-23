@@ -1,0 +1,23 @@
+// ✅ Common reusable mixins
+
+// Center content with flexbox
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+// Responsive container
+@mixin container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+// Font style helper
+@mixin text-style($size, $weight: 400, $color: $color-dark-blue) {
+  font-size: $size;
+  font-weight: $weight;
+  color: $color;
+}
