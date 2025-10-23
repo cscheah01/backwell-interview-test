@@ -61,5 +61,22 @@ All layouts verified for text readability, image scaling, and tap-friendly UI.
 ```bash
 npm install
 
-npm run dev
-Then open: http://localhost:3000
+npm run build
+
+npm start
+
+---
+
+
+
+
+## 📝 License & Copyright
+
+© 2025 Alfred Cheah. All rights reserved.
+
+This project and its source code are proprietary and confidential.  
+Unauthorized copying, modification, or distribution of this software,  
+via any medium, is strictly prohibited without the express permission  
+of the author.
+
+For inquiries, please contact [cscheah01@gmail.com].
